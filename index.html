@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Project</title>
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="wallpapersden.com_small-memory_1366x768.jpg">
+    <link rel="icon" href="img/wallpapersden.com_small-memory_1366x768.jpg">
     <style>
         html {
             scroll-behavior: smooth;
@@ -125,7 +126,7 @@
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
-            background-image: url(school_02.jpg);
+            background-image: url(../img/school_02.jpg);
             background-size: cover;
         }
 
@@ -138,7 +139,7 @@
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
-            background-image: url(Dollar_Academy_WEB-01.webp);
+            background-image: url(../img/Dollar_Academy_WEB-01.webp);
             background-size: cover;
         }
 
@@ -151,11 +152,9 @@
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
-            background-image: url(Elementary_classroom_in_Alaska.jpg);
+            background-image: url(../img/Elementary_classroom_in_Alaska.jpg);
             background-size: cover;
         }
-
-
 
         .secborder-content-one p,
         .secborder-content-two p,
@@ -290,7 +289,7 @@
             -o-transform: translate(-50%, -50%) scale(0.1);
             text-align: center;
             padding: 0 30px 30px;
-            color: #ffffff;
+            color: #0b0b0b;
             visibility: hidden;
             transition: transform 0.4s, top 0.4s;
             -webkit-transition: transform 0.4s, top 0.4s;
@@ -310,7 +309,58 @@
             margin-top: 50px;
             padding: 10px 0;
             background: #85c554;
-            color: #fff;
+            color: #050505;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: none;
+            -webkit-border-radius: none;
+            -moz-border-radius: none;
+            -ms-border-radius: none;
+            -o-border-radius: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .birthpopup {
+            width: 400px;
+            background: #f70303;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            -webkit-transform: translate(-50%, -50%) scale(0.1);
+            -moz-transform: translate(-50%, -50%) scale(0.1);
+            -ms-transform: translate(-50%, -50%) scale(0.1);
+            -o-transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #ffffff;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            -webkit-transition: transform 0.4s, top 0.4s;
+            -moz-transition: transform 0.4s, top 0.4s;
+            -ms-transition: transform 0.4s, top 0.4s;
+            -o-transition: transform 0.4s, top 0.4s;
+        }
+
+        .birthpopup h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .birthpopup button {
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #b55252;
+            color: #ffffff;
             border: 0;
             outline: none;
             font-size: 18px;
@@ -333,6 +383,7 @@
             -o-transform: translate(-50%, -50%) scale(1);
         }
 
+
         footer {
             text-align: end;
         }
@@ -342,7 +393,7 @@
 <body>
     <nav class="container">
         <div class="logo-border">
-            <img src="scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
+            <img src="img/scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
 
         </div>
         <button class="bar"><a href="">Home</a></button>
@@ -355,28 +406,19 @@
     </header>
     <main class="content">
         <div class="border-image">
-            <img class="img active" src="school_02.jpg" alt="">
-            <img class="img active" src="Dollar_Academy_WEB-01.webp" alt="">
-            <img class="img active" src="Elementary_classroom_in_Alaska.jpg" alt="">
+            <img class="img active" src="img/school_02.jpg" alt="">
+            <img class="img active" src="img/Dollar_Academy_WEB-01.webp" alt="">
+            <img class="img active" src="img/Elementary_classroom_in_Alaska.jpg" alt="">
         </div>
         <h1 id="facilitations">Our Facilitation</h1>
         <div class="border-second">
             <div class="secborder-content-one" data-aos="fade-right" data-aos-duration="2000">
-                <div class="border-for-image">
-                    <!--<img src="/week1/img/20516969.jpg" alt=""> -->
-                </div>
                 <p>Swimming Pool</p>
             </div>
             <div class="secborder-content-two" data-aos="fade-up" data-aos-duration="2000">
-                <div class="border-for-image">
-                    <!-- <img src="/week1/img/scenic-river-bridge-unnla87r6bnw7pev.jpg" alt=""> -->
-                </div>
                 <p>Gym</p>
             </div>
             <div class="secborder-content-three" data-aos="fade-left" data-aos-duration="2000">
-                <div class="border-for-image">
-                    <!-- <img src="/week1/img/wallpapersden.com_small-memory_1366x768.jpg" alt=""> -->
-                </div>
                 <p>Classroom</p>
             </div>
         </div>
@@ -466,11 +508,16 @@
             <p>Your data has been succesfully submitted !</p>
             <button type="button" id="close-button-suc" class="close-button">Ok</button>
         </div>
+        <div class="birthpopup" id="birthpopup">
+            <h2>Error !</h2>
+            <p>You can't input birth date more than now !</p>
+            <button type="button" id="close-button-suc" class="close-button">Ok</button>
+        </div>
     </main>
     <br><br>
     <hr>
     <footer>
-        By Adhan
+        By Wahyu Ramadhan
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -479,6 +526,7 @@
             ValidateForm();
         });
 
+        // untuk memvalidasi form //
         function ValidateForm() {
             const name = document.forms["form"]["input-name"].value;
             const birth = document.forms["form"]["input-birth"].value;
@@ -486,14 +534,25 @@
             let message = document.forms["form"]["message-input"].value;
             const errpopup = document.getElementById("errorpopup");
             const sucpopup = document.getElementById("sucesspopup");
+            const birthpopup = document.getElementById("birthpopup");
             const getDay = new Date().toLocaleString();
+            const now = new Date();
+            const selectedBirth = new Date(birth);
 
             if (name == "" || birth == "" || gender == "" || message == "") {
+                // untuk menset popup jika data yang diisi tidak sesuai //
                 showpopup(errpopup);
+            } else if (selectedBirth > now) {
+                // selectedBirth mengambil data input birth //
+                // now berarti mengambil data waktu di hari ini //
+                // untuk menset popup jika tanggal lahir yang dimasukkan tidak boleh melebihi dari hari itu juga //
+                showpopup(birthpopup);
             } else {
+                // untuk menset popup jika data berhasil di submit //
                 showpopup(sucpopup);
                 SetSender(name, birth, gender, message, getDay);
 
+                // mengatur pada input, jika user selesai dalam mengisi form, maka input akan di reset //
                 setTimeout(function () {
                     document.forms["form"].reset();
                 }, 500);
@@ -501,7 +560,7 @@
         }
 
 
-
+        // untuk men set result dan nama di awal //
         function SetSender(name, birth, gender, message, time) {
             document.getElementById("name").innerHTML = name;
             document.getElementById("name-input").innerHTML = name;
@@ -511,8 +570,11 @@
             document.getElementById("time-input").innerHTML = time;
         }
 
+        // untuk men set popup berhasil atau tidak //
         function showpopup(ShowPopUp) {
             ShowPopUp.classList.add("open-popup");
+
+            // mengatur pergerakan dari form ke popup menjadi smooth //
             ShowPopUp.scrollIntoView({ behavior: "smooth", block: "center" });
 
             let closebtn = ShowPopUp.querySelector(".close-button");
@@ -522,9 +584,11 @@
             }, { once: true });
         }
 
+        // untuk banner image //
         let indexSlide = 1;
         showDivs(indexSlide);
 
+        // mengatur autoslide image //
         function plusDivs(n) {
             showDivs((indexSlide += n));
         }
@@ -545,6 +609,7 @@
             imglist[indexSlide - 1].classList.add("active");
         }
 
+        // mengatur durasi autoslide image //
         setInterval(() => {
             plusDivs(1);
         }, 2000);
