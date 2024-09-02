@@ -373,6 +373,61 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+        .logoutpopup {
+            width: 400px;
+            background: #85f703;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            -webkit-transform: translate(-50%, -50%) scale(0.1);
+            -moz-transform: translate(-50%, -50%) scale(0.1);
+            -ms-transform: translate(-50%, -50%) scale(0.1);
+            -o-transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #000000;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            -webkit-transition: transform 0.4s, top 0.4s;
+            -moz-transition: transform 0.4s, top 0.4s;
+            -ms-transition: transform 0.4s, top 0.4s;
+            -o-transition: transform 0.4s, top 0.4s;
+        }
+
+        .logoutpopup h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .logoutpopup button {
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #85c554;
+            color: #000000;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: none;
+            -webkit-border-radius: none;
+            -moz-border-radius: none;
+            -ms-border-radius: none;
+            -o-border-radius: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logoutpopup #namelogout {
+            font-style: italic;
+        }
+
         .open-popup {
             top: 50%;
             visibility: visible;
@@ -394,12 +449,11 @@
     <nav class="container">
         <div class="logo-border">
             <img src="img/scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
-
         </div>
         <button class="bar"><a href="">Home</a></button>
         <button class="bar"><a href="#facilitations">Our Facilitation</a></button>
         <button class="bar"><a href="#message">Message Us</a></button>
-        <button class="bar"><a href="">Logout</a></button>
+        <button class="bar" onclick="LogOut()">Log Out</button>
     </nav>
     <header class="header">
         <p>Hi <span id="name"></span>, Welcome To Website</p>
@@ -513,6 +567,11 @@
             <p>You can't input birth date more than now !</p>
             <button type="button" id="close-button-suc" class="close-button">Ok</button>
         </div>
+        <div class="logoutpopup" id="logoutpopup">
+            <h2>Thank Yoy !</h2>
+            <p>See You Later, <span id="namelogout"></span> !</p>
+            <button type="button" id="close-button-suc" class="close-button">Ok</button>
+        </div>
     </main>
     <br><br>
     <hr>
@@ -568,6 +627,19 @@
             document.getElementById("gender-input").innerHTML = gender;
             document.getElementById("message-input").innerHTML = message;
             document.getElementById("time-input").innerHTML = time;
+            document.getElementById("name-logout").innerHTML = name;
+        }
+
+        //log out, semua akan ke reset //
+        function LogOut() {
+            const logout = document.getElementById("logoutpopup");
+            showpopup(logout);
+            document.getElementById("name").innerHTML = "";
+            document.getElementById("name-input").innerHTML = "";
+            document.getElementById("birth-input").innerHTML = "";
+            document.getElementById("gender-input").innerHTML = "";
+            document.getElementById("message-input").innerHTML = "";
+            document.getElementById("time-input").innerHTML = "";
         }
 
         // untuk men set popup berhasil atau tidak //
