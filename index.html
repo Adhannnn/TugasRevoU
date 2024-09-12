@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Project</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="img/wallpapersden.com_small-memory_1366x768.jpg">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
+"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -454,7 +458,7 @@
         <button class="bar"><a href="">Home</a></button>
         <button class="bar"><a href="#facilitations">Our Facilitation</a></button>
         <button class="bar"><a href="#message">Message Us</a></button>
-        <button class="bar" onclick="LogOut()">Log Out</button>
+        <button class="bar" onclick="LogOut(setNamepop())">Log Out</button>
     </nav>
     <header class="header">
         <p>Hi <span id="name"></span>, Welcome To Website</p>
@@ -537,6 +541,7 @@
                                 <td id="bold">Tanggal Lahir</td>
                                 <td id="bold">:</td>
                                 <td id="birth-input"></td>
+                                <td><span id="age"></span></td>
                             </tr>
                             <tr>
                                 <td id="bold">Jenis Kelamin</td>
@@ -570,7 +575,7 @@
         </div>
         <div class="logoutpopup" id="logoutpopup">
             <h2>Thank You !</h2>
-            <p>See You Later<span id="namelogout"></span> !</p>
+            <p>See You Later <span id="namelogout"></span> !</p>
             <button type="button" id="close-button-suc" class="close-button">Ok</button>
         </div>
     </main>
@@ -580,6 +585,7 @@
         By Wahyu Ramadhan
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
     <script>
         document.forms["form"].addEventListener("submit", function (event) {
             event.preventDefault();
@@ -598,19 +604,21 @@
             const getDay = new Date().toLocaleString();
             const now = new Date();
             const selectedBirth = new Date(birth);
+            const date = new Date(birth);
+            const age = now.getFullYear() - date.getFullYear();
 
             if (name == "" || birth == "" || gender == "" || message == "") {
                 // untuk menset popup jika data yang diisi tidak sesuai //
-                showpopup(errpopup);
+                unsuccess();
             } else if (selectedBirth > now) {
                 // selectedBirth mengambil data input birth //
                 // now berarti mengambil data waktu di hari ini //
                 // untuk menset popup jika tanggal lahir yang dimasukkan tidak boleh melebihi dari hari itu juga //
-                showpopup(birthpopup);
+                anomaly();
             } else {
                 // untuk menset popup jika data berhasil di submit //
-                showpopup(sucpopup);
-                SetSender(name, birth, gender, message, getDay);
+                success();
+                SetSender(name, birth, gender, message, getDay, age);
 
                 // mengatur pada input, jika user selesai dalam mengisi form, maka input akan di reset //
                 setTimeout(function () {
@@ -619,31 +627,73 @@
             }
         }
 
-
         // untuk men set result dan nama di awal //
-        function SetSender(name, birth, gender, message, time) {
+        function SetSender(name, birth, gender, message, time, age) {
             document.getElementById("name").innerHTML = name;
             document.getElementById("name-input").innerHTML = name;
             document.getElementById("birth-input").innerHTML = birth;
             document.getElementById("gender-input").innerHTML = gender;
             document.getElementById("message-input").innerHTML = message;
             document.getElementById("time-input").innerHTML = time;
+            document.getElementById("age").innerHTML = "(" + age + " years)";
         }
 
-        function setLog(name) {
-            document.getElementById("name-logout").innerHTML = name;
+        function setNamepop() {
+            let name = document.getElementById("name").value;
+            document.getElementById("namelogout").innerHTML = name;
         }
 
         //log out, semua akan ke reset //
         function LogOut() {
-            const logout = document.getElementById("logoutpopup");
-            showpopup(logout);
-            document.getElementById("name").innerHTML = "";
-            document.getElementById("name-input").innerHTML = "";
-            document.getElementById("birth-input").innerHTML = "";
-            document.getElementById("gender-input").innerHTML = "";
-            document.getElementById("message-input").innerHTML = "";
-            document.getElementById("time-input").innerHTML = "";
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Are you sure want to log out?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes !"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Log Out Success!",
+                        text: "See you next time !",
+                        icon: "success"
+                    });
+                    document.getElementById("name").innerHTML = "";
+                    document.getElementById("name-input").innerHTML = "";
+                    document.getElementById("birth-input").innerHTML = "";
+                    document.getElementById("gender-input").innerHTML = "";
+                    document.getElementById("message-input").innerHTML = "";
+                    document.getElementById("age").innerHTML = "";
+                    document.getElementById("time-input").innerHTML = "";
+                }
+            });
+
+        }
+
+        function success() {
+            Swal.fire({
+                title: "Success !",
+                text: "Your data has been successfully submitted !",
+                icon: "success"
+            });
+        }
+
+        function unsuccess() {
+            Swal.fire({
+                title: "Error",
+                text: "All data must be fill in",
+                icon: "error"
+            });
+        }
+
+        function anomaly() {
+            Swal.fire({
+                title: "Oops",
+                text: "You can't input your birth more than now !",
+                icon: "question"
+            });
         }
 
         // untuk men set popup berhasil atau tidak //
