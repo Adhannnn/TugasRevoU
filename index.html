@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Project</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="img/wallpapersden.com_small-memory_1366x768.jpg">
+    <link rel="icon" href="wallpapersden.com_small-memory_1366x768.jpg">
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="
@@ -453,7 +453,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
 <body>
     <nav class="container">
         <div class="logo-border">
-            <img src="img/scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
+            <img src="scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
         </div>
         <button class="bar"><a href="">Home</a></button>
         <button class="bar"><a href="#facilitations">Our Facilitation</a></button>
@@ -465,9 +465,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
     </header>
     <main class="content">
         <div class="border-image">
-            <img class="img active" src="img/school_02.jpg" alt="">
-            <img class="img active" src="img/Dollar_Academy_WEB-01.webp" alt="">
-            <img class="img active" src="img/Elementary_classroom_in_Alaska.jpg" alt="">
+            <img class="img active" src="school_02.jpg" alt="">
+            <img class="img active" src="Dollar_Academy_WEB-01.webp" alt="">
+            <img class="img active" src="Elementary_classroom_in_Alaska.jpg" alt="">
         </div>
         <h1 id="facilitations">Our Facilitation</h1>
         <div class="border-second">
@@ -488,27 +488,27 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
                 <form id="form" name="form" action="" method="get" onsubmit="ValidateForm()">
                     <table>
                         <tr>
-                            <td>Nama</td>
+                            <td>Name</td>
                             <td>:</td>
-                            <td><input type="text" id="input-name" name="input-name" placeholder="Nama Anda"></td>
+                            <td><input type="text" id="input-name" name="input-name" placeholder="Name"></td>
                         </tr>
                         <tr>
-                            <td>Tanggal Lahir</td>
+                            <td>Birthdate</td>
                             <td>:</td>
                             <td><input type="date" id="input-birth" name="input-birth"></td>
                         </tr>
                         <tr>
-                            <td>Jenis Kelamin</td>
+                            <td>Gender</td>
                             <td>:</td>
                             <td>
                                 <input type="radio" name="gender" id="input-gender" value="Laki - laki">
-                                <label for="male">Laki - laki</label>
+                                <label for="male">Male</label>
                                 <input type="radio" name="gender" id="input-gender" value="Perempuan">
-                                <label for="female">Perempuan</label>
+                                <label for="female">Female</label>
                             </td>
                         </tr>
                         <tr>
-                            <td class="pesan">Pesan</td>
+                            <td class="pesan">Message</td>
                             <td class="pesan">:</td>
                             <td>
                                 <textarea name="message-input" id="input-pesan" rows="5" cols="43"></textarea>
@@ -517,7 +517,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
                         <tr>
                             <td colspan="3" style="text-align: center;">
                                 <button type="submit" id="submitbtn" class="submitbtn" onclick="ValidateForm()"
-                                    style="width: 100%;">Kirim</button>
+                                    style="width: 100%;">Submit</button>
                             </td>
                         </tr>
                     </table>
@@ -533,23 +533,23 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
                                 <td id="time-input"></td>
                             </tr>
                             <tr>
-                                <td id="bold">Nama</td>
+                                <td id="bold">Name</td>
                                 <td id="bold">:</td>
                                 <td id="name-input"></td>
                             </tr>
                             <tr>
-                                <td id="bold">Tanggal Lahir</td>
+                                <td id="bold">Birthdate</td>
                                 <td id="bold">:</td>
                                 <td id="birth-input"></td>
                                 <td><span id="age"></span></td>
                             </tr>
                             <tr>
-                                <td id="bold">Jenis Kelamin</td>
+                                <td id="bold">Gender</td>
                                 <td id="bold">:</td>
                                 <td id="gender-input"></td>
                             </tr>
                             <tr>
-                                <td id="bold">Pesan</td>
+                                <td id="bold">Message</td>
                                 <td id="bold">:</td>
                                 <td id="message-input"></td>
                             </tr>
@@ -582,7 +582,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
     <br><br>
     <hr>
     <footer>
-        By Wahyu Ramadhan
+        
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="sweetalert2.all.min.js"></script>
@@ -710,11 +710,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
             }, { once: true });
         }
 
-        // untuk banner image //
+        // for image slideshow //
         let indexSlide = 1;
         showDivs(indexSlide);
 
-        // mengatur autoslide image //
+        // settings for image slideshow //
         function plusDivs(n) {
             showDivs((indexSlide += n));
         }
